@@ -1,0 +1,11 @@
+.DS_store
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.swp
+*.swo
+*.gz
+*.orig

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+DIR=$1
+URL=$2
+BRANCH=$3
+CONFIG=$4
+
+if [ "$#" -ne 4 ]; then
+  echo "usage: checkout-doxygen directory url branch config"
+  exit 1
+fi
+
+if [ ! -d $DIR ]; then
+  git clone $URL $DIR
+fi
+
+(
+cd $DIR git && git checkout $BRANCH && git pull --rebase
+)
+
+(cat $CONFIG ; echo -e "PROJECT_BRIEF=\"JavaScript Engine ($BRANCH)\"\nPROJECT_NUMBER=$(v8-doxygen/scripts/version)") | doxygen -
