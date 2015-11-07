@@ -6,7 +6,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 SCRIPT=$HOME/v8-doxygen/scripts/checkout-doxygen
-DIR=$HOME/v8 
-URL="https://github.com/v8/v8-git-mirror"
+DIR=$HOME/v8
+URL="https://github.com/v8/v8"
 
 $SCRIPT $DIR $URL $1 $HOME/v8-doxygen/scripts/configs/$2
