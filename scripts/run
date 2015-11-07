@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ "$#" -ne 2 ]; then
+  echo "Usage: run BRANCH CONFIG"
+  exit 1
+fi
+
 SCRIPT=$HOME/v8-doxygen/scripts/checkout-doxygen
 DIR=$HOME/v8 
 URL="https://github.com/v8/v8-git-mirror"

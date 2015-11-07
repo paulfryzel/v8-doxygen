@@ -6,7 +6,7 @@ BRANCH=$3
 CONFIG=$4
 
 if [ "$#" -ne 4 ]; then
-  echo "usage: checkout-doxygen directory url branch config"
+  echo "Usage: checkout-doxygen DIRECTORY URL BRANCH CONFIG"
   exit 1
 fi
 
