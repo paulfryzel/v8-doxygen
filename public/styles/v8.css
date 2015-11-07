@@ -1,0 +1,42 @@
+* {
+  font-family: Roboto,sans-serif !important;
+}
+
+#titlearea {
+  box-sizing: border-box;
+  height: 56px;
+  padding: 10px 24px;
+}
+
+#titlearea table tbody tr {
+  height: 100% !important;
+}
+
+#titlearea #projectlogo {
+  vertical-align: inherit;
+}
+
+#titlearea #projectlogo img {
+  height: 36px;
+}
+
+#titlearea #projectname, #titlearea #projectbrief, #titlearea #projectnumber {
+  display: inline-block;
+  font-size: 100%;
+}
+
+#titlearea #projectname {
+  font-weight: bold;
+}
+
+#nav-path li.footer a {
+  font-weight: bold;
+}
+
+#hide-deprecated {
+  vertical-align: middle;
+}
+
+.hide-deprecated .deprecated {
+  display: none !important;
+}

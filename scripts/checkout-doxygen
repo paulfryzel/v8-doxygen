@@ -14,8 +14,6 @@ if [ ! -d $DIR ]; then
   git clone $URL $DIR
 fi
 
-(
-cd $DIR git && git checkout $BRANCH && git pull --rebase
-)
+(cd $DIR git && git checkout $BRANCH && git pull --rebase)
 
-(cat $CONFIG ; echo -e "PROJECT_BRIEF=\"JavaScript Engine ($BRANCH)\"\nPROJECT_NUMBER=$(v8-doxygen/scripts/version)") | doxygen -
+(cat $CONFIG ; echo -e "PROJECT_BRIEF=\"($BRANCH)\"\nPROJECT_NUMBER=\"$($HOME/v8-doxygen/scripts/version)\"") | doxygen -
