@@ -25,16 +25,16 @@ function tagDeprecated(root, filterMethod, className, ancestorSelector) {
     var container = null;
 
     switch (nodeName) {
-    default:
-      break;
-    case 'TR':
-      container = closest.prev('tr[class^="separator"]');
-      container.addClass(className);
-      break;
-    case 'A':
-      container = closest.closest('li');
-      container.addClass(className);
-      break;
+      default:
+        break;
+      case 'TR':
+        container = closest.prev('tr[class^="separator"]');
+        container.addClass(className);
+        break;
+      case 'A':
+        container = closest.closest('li');
+        container.addClass(className);
+        break;
     }
   }
 }
@@ -57,21 +57,22 @@ function init() {
 }
 
 // Redefine dynsections::toggleInherit for hidden deprecated method support
+/*eslint no-unused-vars:0 */
 function toggleInherit(id) {
   var rows = $('tr.inherit.'+id);
   var img = $('tr.inherit_header.'+id+' img');
   var src = $(img).attr('src');
   if ($(img).attr('src').indexOf('open') > -1) {
-    rows.css('display','none');
-    $(img).attr('src',src.substring(0,src.length-8)+'closed.png');
+    rows.css('display', 'none');
+    $(img).attr('src', src.substring(0, src.length-8)+'closed.png');
   } else {
-    rows.css('display','table-row'); // using show() causes jump in firefox
-    $(img).attr('src',src.substring(0,src.length-10)+'open.png');
+    rows.css('display', 'table-row'); // using show() causes jump in firefox
+    $(img).attr('src', src.substring(0, src.length-10)+'open.png');
   }
 }
 
 function tag(root, selector) {
-  tagDeprecated(root, filter, 'deprecated', selector)
+  tagDeprecated(root, filter, 'deprecated', selector);
 }
 
 jQuery(document).ready(function() {
